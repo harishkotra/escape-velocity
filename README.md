@@ -291,21 +291,3 @@ The level architecture is designed to be plug-and-play:
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
 The project includes a `vercel.json` with the correct framework preset. Set `OPENAI_API_KEY` as an environment variable in the Vercel dashboard.
-
----
-
-## Built By
-
-<div align="center">
-  <p>
-    <strong><a href="https://harishkotra.me">Harish Kotra</a></strong>
-    <br/>
-    Check out my other builds at <a href="https://dailybuild.xyz">dailybuild.xyz</a>
-  </p>
-</div>
-
----
-
-<p align="center">
-  <em>Your satisfaction is very important to us.</em>
-</p>

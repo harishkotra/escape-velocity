@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useReducer, useCallback, type ReactNode } from "react"
+import { createContext, useContext, useReducer, useCallback, useEffect, type ReactNode } from "react"
 import type { GameState, GamePhase, LevelId, LevelScore, Achievement, NPCMessage } from "./types"
 import { ACHIEVEMENTS_DEF } from "./types"
 
@@ -87,6 +87,9 @@ function gameReducer(state: GameState, action: Action): GameState {
     case "SET_JUDGE_MODE":
       return { ...state, isJudgeMode: action.value }
     case "RESET_GAME":
+      if (typeof window !== "undefined") {
+        try { localStorage.removeItem("gameState") } catch {}
+      }
       return { ...initialState }
     default:
       return state
@@ -100,8 +103,28 @@ interface GameContextValue {
 
 const GameContext = createContext<GameContextValue | null>(null)
 
+function hydrateState(): GameState {
+  if (typeof window === "undefined") return initialState
+  try {
+    const saved = localStorage.getItem("gameState")
+    if (saved) {
+      const parsed = JSON.parse(saved) as GameState
+      if (parsed.phase === "gameOver") return initialState
+      return parsed
+    }
+  } catch {}
+  return initialState
+}
+
 export function GameProvider({ children }: { children: ReactNode }) {
-  const [state, dispatch] = useReducer(gameReducer, initialState)
+  const [state, dispatch] = useReducer(gameReducer, initialState, hydrateState)
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("gameState", JSON.stringify(state))
+    } catch {}
+  }, [state])
+
   return <GameContext.Provider value={{ state, dispatch }}>{children}</GameContext.Provider>
 }
 

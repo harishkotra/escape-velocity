@@ -6,6 +6,13 @@ A mobile-first, voice-powered AI game where players must escape increasingly abs
 
 **[Play the Judge Demo →](/game/judge)**
 
+#### Screenshots
+
+<img width="3154" height="2214" alt="screencapture-localhost-3000-game-judge-2026-06-04-20_04_56" src="https://github.com/user-attachments/assets/b4fd1fb3-fe0c-4bb5-bf5c-503ba388c0c3" />
+<img width="3154" height="2214" alt="screencapture-localhost-3000-game-judge-2026-06-04-20_05_18" src="https://github.com/user-attachments/assets/86f231da-4819-44db-a42b-9fbbb0b26f22" />
+<img width="3154" height="2214" alt="screencapture-localhost-3000-game-judge-2026-06-04-20_05_40" src="https://github.com/user-attachments/assets/dc9034f9-a9a1-4591-b3f6-92c1214e573c" />
+<img width="3154" height="2214" alt="screencapture-localhost-3000-game-judge-2026-06-04-20_05_58" src="https://github.com/user-attachments/assets/bd487bf8-e2de-435f-a62c-36b33cc21f20" />
+
 ---
 
 ## The Concept
